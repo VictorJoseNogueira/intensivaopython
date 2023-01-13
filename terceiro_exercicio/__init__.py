@@ -5,8 +5,9 @@ import pyperclip
 from time import sleep
 from selenium import webdriver
 navegador = webdriver.Chrome()
-sleep(5)
-navegador.get(r'https://www.google.com/search?q=cota%C3%A7%C3%A3o+dolar&rlz=1C1ONGR_pt-PTBR1005BR1005&oq=cota%C3%A7&aqs=chrome.1.69i57j0i67i131i433j0i67i433j0i67i131i433l2j0i131i433i512j0i433i512j0i67i131i433j0i131i433j0i67i433.2207j1j7&sourceid=chrome&ie=UTF-8')
+sleep(2)
+navegador.get(r'https://www.google.com/')
+navegador.find_element('xpath', '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').send_keys('cotação dolar')
 
 
 #1: conferir cotações
