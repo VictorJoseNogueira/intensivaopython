@@ -19,6 +19,11 @@ sns.heatmap(tabela.corr(), cmap='Greens', annot=True)
 #exibir grafico
 plt.show()
 # passo 5: analise exploratoria
+y = tabela['Vendas']
+x = tabela[['TV', 'Radio', 'Jornal']]
+# y = quem quero prever x resto
+
+
 
 
 # passo 6: modelagem + algoritimo(IA se necessario )
