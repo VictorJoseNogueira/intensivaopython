@@ -3,14 +3,6 @@ from selenium.webdriver.common.keys import Keys
 import pandas as pd
 import datetime as dt
 x = dt.date.today()
-print(x)
-
-
-
-
-
-
-
 
 #1: conferir cotações
     #1.1: cotação do dolar
@@ -37,8 +29,6 @@ cotacao_ouro = cotacao_ouro.replace(",", ".")
 cotacao_ouro = float(cotacao_ouro)
 cotacao_euro = float(cotacao_euro)
 cotacao_dolar = float(cotacao_dolar)
-
-
 navegador.quit()
 
 
@@ -48,9 +38,9 @@ tabela = pd.read_excel('Produtos.xlsx')
 
 
 #3: alterar valores da base de dados
-tabela.loc[tabela['Moeda'] == 'Dólar', 'Cotação'] = float(cotacao_dolar)
-tabela.loc[tabela['Moeda'] == 'Euro', 'Cotação'] = float(cotacao_euro)
-tabela.loc[tabela['Moeda'] == 'Ouro', 'Cotação'] = float(cotacao_ouro)
+tabela.loc[tabela['Moeda'] == 'Dólar', 'Cotação'] = cotacao_dolar
+tabela.loc[tabela['Moeda'] == 'Euro', 'Cotação'] = cotacao_euro
+tabela.loc[tabela['Moeda'] == 'Ouro', 'Cotação'] = cotacao_ouro
 #preço de compra = preço original X cotação
 tabela['Preço de Compra'] = tabela['Preço Original'] * tabela['Cotação']
 
