@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # passo 1: entender o desafio
 # passo 2: entendimento da area/empresa
@@ -7,8 +9,15 @@ tabela = pd.read_csv(r"C:\Users\T-GAMER\Desktop\aula intensivão\Aula 4\advertis
 print(tabela)
 print(tabela.corr())
 print(tabela.info())
+
+
 # passo 4: tratamento de dados
 #nesse exercicio essa etapa ja foi feita pelo lira
+
+#criar grafico
+sns.heatmap(tabela.corr(), cmap='Greens', annot=True)
+#exibir grafico
+plt.show()
 # passo 5: analise exploratoria
 
 
